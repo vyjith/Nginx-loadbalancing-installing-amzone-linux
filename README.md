@@ -225,7 +225,7 @@ server {
 }
 
 ```
-##**_Please note : Replace the domain.com with your domain name._**
+## **_Please note : Replace the domain.com with your domain name._**
 
 -------------------------------------------------- 
 # Enabling Let's encrypt on Amazon Linux with Nginx
