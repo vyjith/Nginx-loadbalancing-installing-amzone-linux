@@ -24,19 +24,19 @@ Launch an amzon-linux instance using the management console. While launching the
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 ```
 
-### Execute the following.
+#### Step2: Execute the following.
 
 ```
 sudo yum install -y epel-release
 ```
 
-### Step3: Update the packages list
+#### Step3: Update the packages list
 
 ```
 sudo yum update -y
 ```
 
-### Install Nginx
+#### Install Nginx
 
 ```
 sudo yum install nginx -y
@@ -45,34 +45,32 @@ sudo yum install nginx -y
 # Start and Enable Nginx
 -------------------------------------------------- 
 
-### Step 1 : Check the verstion to make sure Nginx is installed
+#### Step 1 : Check the verstion to make sure Nginx is installed
 
 ```
 sudo nginx -V
 ```
 
 
-### Step 2: Start and enable Nginx
+#### Step 2: Start and enable Nginx
 
 ```
 sudo systemctl start nginx
 sudo systemctl enable nginx
 ```
 
-### Step3: Check the status Nginx to make sure it is running as expected.
+#### Step3: Check the status Nginx to make sure it is running as expected.
 
 ```
 sudo systemctl status nginx
 ```
 
-### Step4: Visit the nginx page using the Server IP. You should be seeing 
+#### Step4: Visit the nginx page using the Server IP. You should be seeing 
 
 ```
 http://[server-IP]
 ```
 
-
-[Image-section]
 
 
 # Client Instance setup
@@ -87,7 +85,7 @@ When you have one or more website to be hosted on the same Nginx server, you nee
 
 In this section, I will show you how to create a virtual host configration for a website.
 
-Step 1: Create the website forlder and a public folder to put the static assets inside /var/www
+#### Step 1: Create the website forlder and a public folder to put the static assets inside /var/www
 
 Here am going to give the name as domain.com. Replace the name with your website name. 
 
@@ -95,13 +93,13 @@ Here am going to give the name as domain.com. Replace the name with your website
 sudo mkdir /var/www/domain.com/public_html
 ```
 
-Step 2: Create a test index.html file if you dont have your own index file.
+#### Step 2: Create a test index.html file if you dont have your own index file.
 
 ```
 sudo vi /var/www/domain.com/public_html/index.html
 ```
 
-Copy the below content to /var/www/domain.com/public_html/index.html
+> Copy the below content to /var/www/domain.com/public_html/index.html
 ```
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -115,19 +113,19 @@ Copy the below content to /var/www/domain.com/public_html/index.html
 </html>
 
 ```
-Step3: Change the ownership of the root document to the use which is managing the worker process.
+#### Step3: Change the ownership of the root document to the use which is managing the worker process.
 
 ```
 sudo chown -R nginx.nginx /var/www/domain.com
 ```
 
-Step4 : Create a Nginx configration file with the website name
+#### Step4 : Create a Nginx configration file with the website name
 
 ```
 sudo vi /etc/nginx/conf.d/domain.com.conf
 ```
 
-Copy the following server block configration the conf file (/etc/nginx/conf.d/domain.com.conf) and save it
+> Copy the following server block configration the conf file (/etc/nginx/conf.d/domain.com.conf) and save it
 
 
 
@@ -152,13 +150,13 @@ server {
     }
 }
 ```
-Step5: Validate the configration file using the following command
+#### Step5: Validate the configration file using the following command
 
 ```
 sudo nginx -t
 ```
 
-If should get the following success message. If no, please check the configration file.
+> If should get the following success message. If no, please check the configration file.
 
 ```
 $ sudo nginx -t
@@ -166,18 +164,18 @@ nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
 ```
 
-Step6: Restart the nginx server.
+#### Step6: Restart the nginx server.
 
 ```
 sudo systemctl restart nginx
 ```
-Step5: Validate the configration file using the following command
+#### Step5: Validate the configration file using the following command
 
 ```
 sudo nginx -t
 ```
 
-If should get the following success message. If no, please check the configration file.
+> If should get the following success message. If no, please check the configration file.
 
 ```
 $ sudo nginx -t
@@ -185,7 +183,7 @@ nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
 nginx: configuration file /etc/nginx/nginx.conf test is successful
 ```
 
-Step6: Restart the nginx server.
+#### Step6: Restart the nginx server.
 
 ```
 sudo systemctl restart nginx
@@ -202,15 +200,15 @@ sudo systemctl restart nginx
 
 You can use Nginx as a load balancer to balance the load. Nginx provided the incoming requests and sends it to the backend servers. To configure Nginx as a load balancer, you have two add two block of code to the nginx configration file.
 
-#### **Note: _Do this on the Master server_**
+### **Note: _Do this on the Master server_**
 
-Step 1: Create loadbalancer.conf file on the Master server under /etc/nginx/conf.d/ .
+#### Step 1: Create loadbalancer.conf file on the Master server under /etc/nginx/conf.d/ .
 
 ```
 sudo mkdir /etc/nginx/conf.d/loadbalancer.conf
 ```
 
-Step2: Add the upstream group under the HTTP section. The upstream group is the group of server which comes under the load balancer. You can give any name to the group. Here I am going to give the name as "backend" and you have to set the vhost configration to receive trafficc from a particular domain name and route it to the upstream severs.
+#### Step2: Add the upstream group under the HTTP section. The upstream group is the group of server which comes under the load balancer. You can give any name to the group. Here I am going to give the name as "backend" and you have to set the vhost configration to receive trafficc from a particular domain name and route it to the upstream severs.
 
 ```
 upstream backend {
@@ -239,7 +237,7 @@ Learn how to setup an Amazon Linux 2 EC2 instance with nginx to accept HTTPS req
 
 Certbot is a free, open-source software tool for automatically using Let's Enrypt certificates on manaully-admininstrated website to enable HTTPS
 
-Step1: Install Certbot on the EC2 instance.
+#### Step1: Install Certbot on the EC2 instance.
 ```
 sudo wget -r --no-parent -A 'epel-release-*.rpm' https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/
 sudo rpm -Uvh dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-*.rpm
@@ -248,15 +246,15 @@ sudo yum install -y certbot
 sudo yum install -y python-certbot-nginx
 ```
 
-Step2: Please add an A record to your domain.com DNS. Replace the domain.com with your domain 
+#### Step2: Please add an A record to your domain.com DNS. Replace the domain.com with your domain 
 
-Step3: Setting up Certbot to obtain your Certificate. Run the following certboot command to to obtain your Certificate, replacing domain.com with your domain:
+#### Step3: Setting up Certbot to obtain your Certificate. Run the following certboot command to to obtain your Certificate, replacing domain.com with your domain:
 
 ```
 sudo certbot --nginx -d domian.com -d www.domian.com
 ```
 
-##### If you want to install this Let's encrypt on your current Loadbalancer.  If yes, follow the procedures above on your Master server and add the following code to the loadbalancer configuration file (/etc/nginx/conf.d/loadbalancer.conf).
+#### If you want to install this Let's encrypt on your current Loadbalancer.  If yes, follow the procedures above on your Master server and add the following code to the loadbalancer configuration file (/etc/nginx/conf.d/loadbalancer.conf).
 
 ```
 server {
@@ -274,7 +272,7 @@ server {
 ```
 #### **Note: Replace the paths ssl_certificate and ssl_certificate_key with your domain's SSL certificate.**
 
-With the HTTPS-enabled you also have the option to enforce encryption to all connections to your load balancer. Simply update your server segment listening to port 80 with a server name and a redirection to your HTTPS port. Then remove or comment out the location portion as it’s no longer needed. See the example below.
+#### With the HTTPS-enabled you also have the option to enforce encryption to all connections to your load balancer. Simply update your server segment listening to port 80 with a server name and a redirection to your HTTPS port. Then remove or comment out the location portion as it’s no longer needed. See the example below.
 
 ```
 server {
