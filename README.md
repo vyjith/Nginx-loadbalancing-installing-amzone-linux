@@ -24,19 +24,19 @@ Step1: In amzon-linux you cannot download and install Nginx directly. You have t
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 ```
 
-Execute the following.
+### Execute the following.
 
 ```
 sudo yum install -y epel-release
 ```
 
-Step3: Update the packages list
+### Step3: Update the packages list
 
 ```
 sudo yum update -y
 ```
 
-Install Nginx
+### Install Nginx
 
 ```
 sudo yum install nginx -y
@@ -45,27 +45,27 @@ sudo yum install nginx -y
 # Start and Enable Nginx
 -------------------------------------------------- 
 
-Step 1 : Check the verstion to make sure Nginx is installed
+### Step 1 : Check the verstion to make sure Nginx is installed
 
 ```
 sudo nginx -V
 ```
 
 
-Step 2: Start and enable Nginx
+### Step 2: Start and enable Nginx
 
 ```
 sudo systemctl start nginx
 sudo systemctl enable nginx
 ```
 
-Step3: Check the status Nginx to make sure it is running as expected.
+### Step3: Check the status Nginx to make sure it is running as expected.
 
 ```
 sudo systemctl status nginx
 ```
 
-Step4: Visit the nginx page using the Server IP. You should be seeing 
+### Step4: Visit the nginx page using the Server IP. You should be seeing 
 
 ```
 http://[server-IP]
