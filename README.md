@@ -254,7 +254,7 @@ sudo yum install -y python-certbot-nginx
 sudo certbot --nginx -d domian.com -d www.domian.com
 ```
 
-#### If you want to install this Let's encrypt on your current Loadbalancer.  If yes, follow the procedures above on your Master server and add the following code to the loadbalancer configuration file (/etc/nginx/conf.d/loadbalancer.conf).
+> If you want to install this Let's encrypt on your current Loadbalancer.  If yes, follow the procedures above on your Master server and add the following code to the loadbalancer configuration file (/etc/nginx/conf.d/loadbalancer.conf).
 
 ```
 server {
