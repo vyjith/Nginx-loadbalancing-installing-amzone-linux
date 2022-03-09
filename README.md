@@ -12,7 +12,7 @@ The process for installing & configuring Nginx on RHEL, Centos and Amazone linx 
 # Master Instance setup
 -------------------------------------------------- 
 
-Launch an amzon-linux instance using the management console. While launching the instance, configure the security group to allow traffic from HTTP 80 port & HTTPS 443
+> Launch an amzon-linux instance using the management console. While launching the instance, configure the security group to allow traffic from HTTP 80 port & HTTPS 443
 
 
 # Install Nginx on amzon-linux
