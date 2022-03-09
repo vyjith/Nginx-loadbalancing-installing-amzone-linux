@@ -18,7 +18,7 @@ Launch an amzon-linux instance using the management console. While launching the
 # Install Nginx on amzon-linux
 -------------------------------------------------- 
 
-Step1: In amzon-linux you cannot download and install Nginx directly. You have to setup the epel(extra packages for enterprise Linux) repo to install Nginx. Install EPEL package repostory
+#### Step1: In amzon-linux you cannot download and install Nginx directly. You have to setup the epel(extra packages for enterprise Linux) repo to install Nginx. Install EPEL package repostory
 
 ```javascript
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
