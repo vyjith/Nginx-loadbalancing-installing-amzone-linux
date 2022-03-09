@@ -87,7 +87,7 @@ In this section, I will show you how to create a virtual host configration for a
 
 #### Step 1: Create the website forlder and a public folder to put the static assets inside /var/www
 
-Here am going to give the name as domain.com. Replace the name with your website name. 
+> Here am going to give the name as domain.com. Replace the name with your website name. 
 
 ```
 sudo mkdir /var/www/domain.com/public_html
