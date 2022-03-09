@@ -78,7 +78,7 @@ http://[server-IP]
 
 Launch two amzon-linux instance using the management console. While launching the instance, configure the security group to allow traffic from HTTP 80 port & HTTPS 443
 
-Please follow the same step we have done to install Nginx on the master server [Click here](#Install-Nginx-on-amzon-linux) and then start and enable nginx on Client machine
+Please follow the same step we have done to install Nginx and start and enable nginx on the master server. [Click here](#Install-Nginx-on-amzon-linux).
 
 When you have one or more website to be hosted on the same Nginx server, you need to use the Virtual Hosts configration.
 
