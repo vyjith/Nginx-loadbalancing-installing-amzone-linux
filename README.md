@@ -207,7 +207,8 @@ server {
 }
 
 ```
-#### Then [validate the configration file](#Validate-the-configration-file-using-the-following-command) and restart nginx
+#### Then validate the configration file using nginx -t and restart nginx
+
 ## **_Please note : Replace the domain.com with your domain name._**
 
 -------------------------------------------------- 
