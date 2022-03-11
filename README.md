@@ -224,9 +224,6 @@ Certbot is a free, open-source software tool for automatically using Let's Enryp
 
 #### Step1: Install Certbot on the EC2 instance.
 ```
-sudo wget -r --no-parent -A 'epel-release-*.rpm' https://dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/
-sudo rpm -Uvh dl.fedoraproject.org/pub/epel/7/x86_64/Packages/e/epel-release-*.rpm
-sudo yum-config-manager --enable epel*
 sudo yum install -y certbot 
 sudo yum install -y python-certbot-nginx
 ```
@@ -238,6 +235,20 @@ sudo yum install -y python-certbot-nginx
 ```
 sudo certbot --nginx -d domian.com -d www.domian.com
 ```
+#### **You may view the message below. When you run the above command, it deploys the certificate to VirtualHost automatically. You can use the [manual setup](#Manual-setup) configuration if the automated Deploying Certificate to VirtualHost fails.**
+
+```
+Deploying Certificate to VirtualHost /etc/nginx/conf.d/loadbalancer.conf
+Deploying Certificate to VirtualHost /etc/nginx/conf.d/loadbalancer.conf
+Redirecting all traffic on port 80 to ssl in /etc/nginx/conf.d/loadbalancer.conf
+Redirecting all traffic on port 80 to ssl in /etc/nginx/conf.d/loadbalancer.conf
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Congratulations! You have successfully enabled https://domain.com and
+https://www.domain.com
+```
+
+## Manual setup
 
 > If you want to install this Let's encrypt on your current Loadbalancer.  If yes, follow the procedures above on your Master server and add the following code to the loadbalancer configuration file (/etc/nginx/conf.d/loadbalancer.conf).
 
