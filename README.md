@@ -90,7 +90,7 @@ In this section, I will show you how to create a virtual host configration for a
 > Here am going to give the name as domain.com. Replace the name with your website name. 
 
 ```
-sudo mkdir /var/www/domain.com/public_html
+sudo mkdir -p /var/www/domain.com/public_html
 ```
 
 #### Step 2: Create a test index.html file if you dont have your own index file.
