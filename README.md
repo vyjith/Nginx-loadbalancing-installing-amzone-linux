@@ -169,25 +169,7 @@ nginx: configuration file /etc/nginx/nginx.conf test is successful
 ```
 sudo systemctl restart nginx
 ```
-#### Step5: Validate the configration file using the following command
 
-```
-sudo nginx -t
-```
-
-> If should get the following success message. If no, please check the configration file.
-
-```
-$ sudo nginx -t
-nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-nginx: configuration file /etc/nginx/nginx.conf test is successful
-```
-
-#### Step6: Restart the nginx server.
-
-```
-sudo systemctl restart nginx
-```
 
 #### Do the same steps that we did on the first amazon instance to the second client amazon instance [Click here for more infomation](#Client-Instance-setup).
 
