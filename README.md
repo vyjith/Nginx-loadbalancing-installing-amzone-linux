@@ -190,7 +190,7 @@ You can use Nginx as a load balancer to balance the load. Nginx provided the inc
 sudo mkdir /etc/nginx/conf.d/loadbalancer.conf
 ```
 
-#### Step2: Add the upstream group under the HTTP section. The upstream group is the group of server which comes under the load balancer. You can give any name to the group. Here I am going to give the name as "backend" and you have to set the vhost configration to receive trafficc from a particular domain name and route it to the upstream severs.
+#### Step2: Add the upstream group under the HTTP section under the configration file (/etc/nginx/conf.d/loadbalancer.conf). The upstream group is the group of server which comes under the load balancer. You can give any name to the group. Here I am going to give the name as "backend" and you have to set the vhost configration to receive trafficc from a particular domain name and route it to the upstream severs.
 
 ```
 upstream backend {
