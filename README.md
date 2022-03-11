@@ -266,7 +266,7 @@ server {
 }
 
 ```
-#### **Note: Replace the paths ssl_certificate and ssl_certificate_key with your domain's SSL certificate.**
+#### **Note: Replace the paths ssl_certificate and ssl_certificate_key with your domain's SSL certificate. Replace your domain name as well.**
 
 #### With the HTTPS-enabled you also have the option to enforce encryption to all connections to your load balancer. Simply update your server segment listening to port 80 with a server name and a redirection to your HTTPS port. Then remove or comment out the location portion as it’s no longer needed. See the example below.
 
