@@ -8,6 +8,8 @@ In this article, I will explain how to install and configure Ngix on ec2 amzon-l
 
 The process for installing & configuring Nginx on RHEL, Centos and Amazone linx is the same. 
 
+![](https://i.ibb.co/b795zsH/Untitled-Diagram-drawio-1.png)
+
 
 # Master Instance setup
 -------------------------------------------------- 
