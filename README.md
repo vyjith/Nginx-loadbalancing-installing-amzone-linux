@@ -4,7 +4,7 @@
 -------------------------------------------------- 
 
 
-In this article, I will explain how to install and configure Ngix on ec2 amzon-linux
+In this article, I will explain how to install and configure Nginx on ec2 amzon-linux
 
 The process for installing & configuring Nginx on RHEL, Centos and Amazone linx is the same. 
 
